@@ -1,0 +1,24 @@
+name: Robot Factory Pipeline
+
+on: [push] 
+
+jobs:
+  run-robot:
+    runs-on: ubuntu-latest 
+
+    steps:
+    - name: අපේ ගබඩාවෙන් කෝඩ් එක ගන්නවා
+      uses: actions/checkout@v4
+      
+    - name: පයිතන් (Python) ලෑස්ති කරනවා
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: රොබෝට ඕන කරන අලුත් පොත දාගන්නවා
+      run: pip install google-genai
+      
+    - name: රොබෝව වැඩට යවනවා! 🚀
+      env:
+        GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+      run: python robot.py
