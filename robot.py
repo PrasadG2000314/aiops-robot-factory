@@ -15,4 +15,4 @@ response = client.models.generate_content(
 
 # 3. උත්තරේ බලමු
 print("Gemini සුපිරි මොළයේ උත්තරේ: ")
-print(response.text
+print(response.text)
