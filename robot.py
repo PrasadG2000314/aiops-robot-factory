@@ -1,16 +1,16 @@
 import os
 from google import genai
 
-# සේප්පුවෙන් රහස් පාස්වර්ඩ් එක ගන්නවා
+# Fetch secret API key from environment
 api_key = os.environ.get("GEMINI_API_KEY")
 client = genai.Client(api_key=api_key)
 
-print("රොබෝ අලුත් Gemini සුපිරි මොළයට කෝල් කරනවා... ☎️")
+print("Calling the new Gemini super brain... ☎️")
 
 response = client.models.generate_content(
     model='gemini-3.5-flash', 
-    contents='කෘතිම බුද්ධිය කියන්නේ මොකක්ද කියලා පොඩි ළමයෙක්ට තේරෙන්න එක වාක්‍යයකින් කියන්න.'
+    contents='Explain what artificial intelligence is in one sentence so a child can understand.'
 )
 
-print("Gemini සුපිරි මොළයේ උත්තරේ: ")
-print(response.text
+print("Gemini super brain's response: ")
+print(response.text)
